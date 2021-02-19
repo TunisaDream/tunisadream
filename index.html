@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tunisa Dream</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo"><a href="#">Tunisa Dream</a></div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+        <li><a href="#banner">page principale</a></li>
+        <li><a href="#content">service</a></li>
+        <li><a href="#">Messenger</a></li>
+        <li><a href="#">Contacter</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="banner" id="banner"></div>
+  <div class="about">
+ <div class="content" id="content">
+      <div class="title">La Tunisie rêve de développement</div>
+      <p>Ministère de la Santé</p>
+      <p>Ministère des Finances</p>
+      <p>ministère des transports</p>
+      <p>ministère de Commerce</p>
+      <p>------</p>
+      <p>------</p>
+      <p>------</p>
+      <p>------</p>
+      <p>------</p>
+      <div class="title">equipe de developpement </div>
+      <h3>chef de projet</h3>
+      <p>issam ben othmen</p>
+      <h3>developer</h3>
+      <p>Meryem Hamdi</p>
+      <p>Khouloud Kaabi</p>
+      <p>Omar Brahim</p>
+      <p>Hamida Ben Arfa</p>
+      <p>Laater Hedi</p>
+    </div>
+  </div>
+
+  <script>
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menu = document.querySelector(".menu-list");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    menuBtn.onclick = ()=>{
+      menu.classList.add("active");
+      menuBtn.classList.add("hide");
+      cancelBtn.classList.add("show");
+      body.classList.add("disabledScroll");
+    }
+    cancelBtn.onclick = ()=>{
+      menu.classList.remove("active");
+      menuBtn.classList.remove("hide");
+      cancelBtn.classList.remove("show");
+      body.classList.remove("disabledScroll");
+    }
+
+    window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+    }
+  </script>
+
+</body>
+</html>
