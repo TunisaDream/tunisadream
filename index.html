@@ -17,6 +17,7 @@
         </div>
         <li><a href="#banner">page principale</a></li>
         <li><a href="#content">service</a></li>
+        <li><a href="#time">time</a></li>
         <li><a href="https://tunisadream.000webhostapp.com/">Messenger</a></li>
         <li><a href="#">Contacter</a></li>
       </ul>
@@ -25,9 +26,20 @@
       </div>
     </div>
   </nav>
-
+ 
   <div class="banner" id="banner"></div>
   <div class="about">
+    <div class="container" id="time">
+        <div class="countdownBx">
+            <h2>La dernière fois pour soumettre le travail au ministère de la Santé<br><span>20<i>21</i></span></i></h2>
+            <div class="countdown">
+                <div id="day">NA</div>
+                <div id="hour">NA</div>
+                <div id="minute">NA</div>
+                <div id="second" class="second">NA</div>
+            </div>
+        </div>
+    </div>
  <div class="content" id="content">
       <div class="title">La Tunisie rêve de développement</div>
       <p>Ministère de la Santé</p>
@@ -74,6 +86,28 @@
       this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
     }
   </script>
+<script type="text/javascript">
+    const countDate = new Date('Feb 21, 2022 00:00:00').getTime();
+    function newYear(){
+        const  now = new Date().getTime();
+        gap = countDate - now;
 
+        const second = 1000;
+        const minute = second*60;
+        const hour = minute*60;
+        const day = hour*24;
+        const d = Math.floor(gap / (day));
+        const h  = Math.floor(gap % (day) /(hour));
+        const m  = Math.floor(gap % (hour) /(minute));
+        const s = Math.floor(gap % (minute) /(second));
+        document.getElementById('day').innerText = d;
+        document.getElementById('hour').innerText = h;
+        document.getElementById('minute').innerText = m;
+        document.getElementById('second').innerText = s;
+    }
+    setInterval(function(){
+        newYear();
+    },1000)
+    </script>
 </body>
 </html>
